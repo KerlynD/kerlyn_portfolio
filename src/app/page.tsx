@@ -1,11 +1,14 @@
+'use client';
+
 import React from 'react';
 import dynamic from 'next/dynamic';
-import Navigation from '../components/Navigation';
-import HelloSection from '../components/sections/HelloSection';
-import AboutSection from '../components/sections/AboutSection';
+import Navigation from '@/components/Navigation';
+import HelloSection from '@/components/sections/HelloSection';
+import AboutSection from '@/components/sections/AboutSection';
 
+// Dynamically import ExperienceSection to avoid SSR issues with Three.js
 const ExperienceSection = dynamic(
-  () => import('../components/sections/ExperienceSection'),
+  () => import('@/components/sections/ExperienceSection'),
   { 
     ssr: false,
     loading: () => (
@@ -20,11 +23,11 @@ const ExperienceSection = dynamic(
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+    <>
       <Navigation />
       <HelloSection />
       <AboutSection />
       <ExperienceSection />
-    </main>
+    </>
   );
 } 

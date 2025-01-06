@@ -25,10 +25,10 @@ export default function Navigation() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-black/50 backdrop-blur-lg py-4' : 'py-6'
+      isScrolled ? 'bg-white-900/50 backdrop-blur-lg py-4' : 'py-6'
     }`}>
       <div className="container mx-auto px-4">
-        <ul className="flex justify-center space-x-8">
+        <ul className="flex justify-center space-x-10">
           {navItems.map((item) => (
             <li key={item.id}>
               <Link
@@ -38,9 +38,9 @@ export default function Navigation() {
                 offset={-100}
                 duration={1000}
                 onSetActive={() => setActiveSection(item.id)}
-                className={`cursor-pointer text-lg font-medium transition-colors duration-300 ${
+                className={`cursor-pointer text-2xl font-medium transition-colors duration-300 ${
                   activeSection === item.id
-                    ? 'text-purple-400'
+                    ? 'text-black'
                     : 'text-gray-300 hover:text-white'
                 }`}
               >
